@@ -21,16 +21,25 @@ class ViewController: UIViewController {
         Question(query: "8 + 3 < 10", answer: "False")
     ]
     
+    var questionNumber = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        updateUI()
     }
 
     @IBAction func buttonPressed(_ sender: UIButton) {
+        if questionNumber < quiz.count - 1 {
+            questionNumber += 1
+        } else {
+            questionNumber = 0
+        }
+        updateUI()
     }
     
     func updateUI() {
-        
+        questionLabel.text = quiz[questionNumber].query
     }
     
 }
