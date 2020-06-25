@@ -53,6 +53,9 @@
                                                                 <integer key="value" value="1"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ChT-yV-mRZ"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5tI-1g-vuF">
                                                         <rect key="frame" x="0.0" y="70" width="68" height="48"/>
@@ -66,6 +69,9 @@
                                                                 <integer key="value" value="1"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8SM-ej-sYV"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <constraints>
@@ -100,6 +106,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="falseButton" destination="5tI-1g-vuF" id="IAL-5D-xHj"/>
+                        <outlet property="progressBar" destination="soQ-VF-0hY" id="oea-JH-JDL"/>
+                        <outlet property="questionLabel" destination="wTX-P9-wpR" id="hNG-eQ-Thh"/>
+                        <outlet property="trueButton" destination="IUY-fq-6mS" id="bCn-mq-DIb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
