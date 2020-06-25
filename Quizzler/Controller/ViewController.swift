@@ -14,8 +14,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var trueButton: UIButton!
     @IBOutlet weak var falseButton: UIButton!
     @IBOutlet weak var progressBar: UIProgressView!
+    @IBOutlet weak var scoreLabel: UILabel!
     
-    var quizBrain = QuizBrain()
+    var quizBrain = QuizBrain() // all properties of struct immutable when declared with let
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +37,7 @@ class ViewController: UIViewController {
             sender.backgroundColor = UIColor.red
         }
         
-        quizBrain.increment()
+        quizBrain.increment() // cycles to next question
         
         progressBar.progress = quizBrain.getProgress()
         
@@ -45,6 +46,7 @@ class ViewController: UIViewController {
     
     @objc func updateUI() {
         questionLabel.text = quizBrain.getQuestionText()
+        scoreLabel.text = "Score: \(quizBrain.getScore())"
         trueButton.backgroundColor = UIColor.clear
         falseButton.backgroundColor = UIColor.clear
     }

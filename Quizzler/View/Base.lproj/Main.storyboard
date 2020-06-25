@@ -15,14 +15,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="Q8d-GS-yv1">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Q8d-GS-yv1">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tcT-3g-I7A">
+                                        <rect key="frame" x="20" y="0.0" width="394" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VLV-XX-hqr" userLabel="Question View">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="590"/>
+                                        <rect key="frame" x="0.0" y="23" width="414" height="612"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Obama was the 44th president and he was very cool and he was very well-versed in popular culture" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wTX-P9-wpR">
-                                                <rect key="frame" x="20" y="223.5" width="340" height="143.5"/>
+                                                <rect key="frame" x="20" y="234.5" width="340" height="143.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -104,8 +110,10 @@
                                     </stackView>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="tcT-3g-I7A" secondAttribute="trailing" id="AfE-fO-6Av"/>
                                     <constraint firstItem="Kpj-7v-PJP" firstAttribute="centerX" secondItem="Q8d-GS-yv1" secondAttribute="centerX" id="FQu-QP-hC9"/>
                                     <constraint firstItem="VLV-XX-hqr" firstAttribute="leading" secondItem="Q8d-GS-yv1" secondAttribute="leading" id="UjH-35-O5Z"/>
+                                    <constraint firstItem="tcT-3g-I7A" firstAttribute="leading" secondItem="Q8d-GS-yv1" secondAttribute="leading" constant="20" id="jOP-kb-kgM"/>
                                 </constraints>
                             </stackView>
                         </subviews>
@@ -122,6 +130,7 @@
                         <outlet property="falseButton" destination="5tI-1g-vuF" id="IAL-5D-xHj"/>
                         <outlet property="progressBar" destination="soQ-VF-0hY" id="oea-JH-JDL"/>
                         <outlet property="questionLabel" destination="wTX-P9-wpR" id="hNG-eQ-Thh"/>
+                        <outlet property="scoreLabel" destination="tcT-3g-I7A" id="hC4-e3-hbV"/>
                         <outlet property="trueButton" destination="IUY-fq-6mS" id="bCn-mq-DIb"/>
                     </connections>
                 </viewController>

@@ -25,9 +25,15 @@ struct QuizBrain {
     ]
     
     var questionNumber = 0
+    var score = 0
     
-    func checkAnswer(answer userAnswer: String) -> Bool { // external, internal parameter name
-        return userAnswer == quiz[questionNumber].answer
+    mutating func checkAnswer(answer userAnswer: String) -> Bool { // external, internal parameter name
+        if userAnswer == quiz[questionNumber].answer {
+            self.score += 1
+            return true
+        }
+        
+        return false
     }
     
     func getProgress() -> Float {
@@ -43,6 +49,11 @@ struct QuizBrain {
             self.questionNumber += 1
         } else {
             self.questionNumber = 0
+            self.score = 0
         }
+    }
+    
+    func getScore() -> Int {
+        return score
     }
 }
