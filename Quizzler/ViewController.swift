@@ -43,19 +43,25 @@ class ViewController: UIViewController {
         let userAnswer = sender.titleLabel!.text!
         let actualAnswer = quiz[questionNumber].answer
         
-        if userAnswer == actualAnswer { print("Correct!") }
-        else { print("Incorrect!") }
+        if userAnswer == actualAnswer {
+            sender.backgroundColor = UIColor.green
+        }
+        else {
+            sender.backgroundColor = UIColor.red
+        }
         
         if questionNumber < quiz.count - 1 {
             questionNumber += 1
         } else {
             questionNumber = 0
         }
-        updateUI()
+        Timer.scheduledTimer(timeInterval: 0.2, target:self, selector: #selector(updateUI), userInfo: nil, repeats: false)
     }
     
-    func updateUI() {
+    @objc func updateUI() {
         questionLabel.text = quiz[questionNumber].query
+        trueButton.backgroundColor = UIColor.clear
+        falseButton.backgroundColor = UIColor.clear
     }
     
 }
