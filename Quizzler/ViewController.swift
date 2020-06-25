@@ -17,7 +17,7 @@ class ViewController: UIViewController {
     
     let quiz = [
         Question(query: "4 + 2 = \(4 + 2)", answer: "True"),
-        Question(query: "5 = 3 > 1", answer: "True"),
+        Question(query: "5 - 3 > 1", answer: "True"),
         Question(query: "8 + 3 < 10", answer: "False")
     ]
     
@@ -30,6 +30,13 @@ class ViewController: UIViewController {
     }
 
     @IBAction func buttonPressed(_ sender: UIButton) {
+        
+        let userAnswer = sender.titleLabel!.text!
+        let actualAnswer = quiz[questionNumber].answer
+        
+        if userAnswer == actualAnswer { print("Correct!") }
+        else { print("Incorrect!") }
+        
         if questionNumber < quiz.count - 1 {
             questionNumber += 1
         } else {
