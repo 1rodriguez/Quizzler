@@ -55,6 +55,9 @@ class ViewController: UIViewController {
         } else {
             questionNumber = 0
         }
+        
+        progressBar.progress = Float(questionNumber) / Float(quiz.count)
+        
         Timer.scheduledTimer(timeInterval: 0.2, target:self, selector: #selector(updateUI), userInfo: nil, repeats: false)
     }
     
