@@ -35,6 +35,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        progressBar.progress = 1.0 / Float(quiz.count)
         updateUI()
     }
 
@@ -56,7 +57,7 @@ class ViewController: UIViewController {
             questionNumber = 0
         }
         
-        progressBar.progress = Float(questionNumber) / Float(quiz.count)
+        progressBar.progress = Float(questionNumber + 1) / Float(quiz.count)
         
         Timer.scheduledTimer(timeInterval: 0.2, target:self, selector: #selector(updateUI), userInfo: nil, repeats: false)
     }
